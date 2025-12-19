@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shazia Fahmeeda | ECE Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- 1. GLOBAL STYLES & RESET --- */
+        :root {
+            --primary-color: #007BFF; /* A clean blue for engineering/tech */
+            --secondary-color: #28A745;
+            --dark-color: #343A40;
+            --light-color: #F8F9FA;
+            --text-color: #495057;
+            --max-width: 1200px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #ffffff;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+        }
+
+        .container {
+            width: 90%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+        
+        section {
+            padding: 60px 0;
+        }
+
+        h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+            text-align: center;
+        }
+        
+        /* --- 2. HEADER & NAVIGATION --- */
+        header {
+            background: var(--dark-color);
+            color: var(--light-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        header h1 {
+            font-size: 1.5em;
+            color: var(--light-color);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li a {
+            color: var(--light-color);
+            padding: 8px 15px;
+            transition: color 0.3s, background-color 0.3s;
+            border-radius: 5px;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+        
+        /* --- 3. HERO SECTION --- */
+        .hero {
+            background: var(--light-color);
+            text-align: center;
+            padding: 100px 0;
+            min-height: 80vh; /* Takes up most of the viewport height */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 5px solid var(--primary-color);
+        }
+        
+        .hero-content h2 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+
+        .hero-content h3 {
+            font-size: 1.5em;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 1.1em;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        /* --- 4. ABOUT SECTION --- */
+        .about {
+            background: #ffffff;
+            text-align: center;
+        }
+        
+        .about h3 {
+            color: var(--primary-color);
+            margin-top: 30px;
+            margin-bottom: 10px;
+            font-size: 1.4em;
+        }
+        
+        .about ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px auto;
+            max-width: 600px;
+            text-align: left;
+        }
+
+        .about ul li {
+            background: var(--light-color);
+            padding: 10px;
+            border-left: 4px solid var(--primary-color);
+            margin-bottom: 8px;
+            border-radius: 3px;
+        }
+
+
+        /* --- 5. PORTFOLIO SECTION --- */
+        .portfolio {
+            background: var(--light-color);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: 1fr; /* Mobile: Single column */
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .project-item {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .project-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+
+        .project-item h3 {
+            color: var(--dark-color);
+            margin-bottom: 10px;
+        }
+        
+        /* --- 6. CONTACT SECTION --- */
+        .contact {
+            text-align: center;
+        }
+        
+        .contact-details {
+            margin-top: 30px;
+            font-size: 1.1em;
+        }
+        
+        .contact-details p {
+            margin-bottom: 15px;
+        }
+        
+        .contact-details a {
+            font-weight: 600;
+        }
+
+
+        /* --- 7. FOOTER --- */
+        footer {
+            background: var(--dark-color);
+            color: var(--light-color);
+            text-align: center;
+            padding: 20px 0;
+            font-size: 0.9em;
+        }
+        
+        /* --- 8. RESPONSIVENESS (Media Queries) --- */
+
+        /* Tablet View (768px and up) */
+        @media (min-width: 768px) {
+            .hero-content h2 {
+                font-size: 4em;
+            }
+            
+            nav ul {
+                gap: 10px;
+            }
+            
+            /* Two columns for projects */
+            .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Desktop View (1024px and up) */
+        @media (min-width: 1024px) {
+            .hero-content h2 {
+                font-size: 5em;
+            }
+
+            /* Three columns for projects */
+            .portfolio-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* Hide nav links on very small devices if space is tight (optional) 
+        @media (max-width: 600px) {
+            nav { display: none; }
+            header .container { justify-content: center; }
+        }
+        */
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Shazia Fahmeeda</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <p class="greeting">Hello, I'm</p>
+                <h2>Shazia Fahmeeda</h2>
+                <h3>Electronics and Communication Engineering Student</h3>
+                <p>Enthusiast in **VLSI design & digital circuits** | Eager to explore **semiconductors** and hands-on innovations[cite: 6, 7].</p>
+                <a href="#portfolio" class="cta-button">View My Work</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>I am a passionate student of Electronics and Communication Engineering [cite: 6] focused on developing robust and innovative solutions in hardware design. My academic journey has instilled a strong foundation in core engineering principles, with a specialization in the following areas:</p>
+            
+            <h3>Core Interests</h3>
+            <ul>
+                <li>VLSI Design & Digital Circuits [cite: 6]</li>
+                <li>Semiconductors and device physics [cite: 7]</li>
+                <li>Hands-on innovative projects [cite: 7]</li>
+            </ul>
+
+            <h3>Education</h3>
+            <ul>
+                <li>**Sri Eshwar College of Engineering** [cite: 6, 9] (2024) [cite: 9]</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2>My Projects & Experience</h2>
+            <p style="text-align: center; margin-bottom: 40px;">Showcasing my skills in VLSI, digital circuits, and ECE innovation.</p>
+            
+            <div class="portfolio-grid">
+                <div class="project-item">
+                    <h3>High-Performance CMOS Inverter Design</h3>
+                    <p>A VLSI project focusing on optimizing power, delay, and area metrics of a CMOS inverter circuit using industry-standard simulation tools (e.g., Cadence/Synopsys). Demonstrates a deep understanding of semiconductor device characteristics.</p>
+                    <a href="#" target="_blank">View Details</a>
+                </div>
+
+                <div class="project-item">
+                    <h3>FPGA-Based Serial Communication Interface (SPI/I2C)</h3>
+                    <p>Implementation of a digital communication protocol (like SPI or I2C) using a Hardware Description Language (HDL like Verilog or VHDL). Tested and validated on a physical FPGA board. Highlights skills in RTL design and hardware testing.</p>
+                    <a href="#" target="_blank">View Details</a>
+                </div>
+
+                <div class="project-item">
+                    <h3>Smart Home Energy Monitoring System</h3>
+                    <p>A hands-on project utilizing microcontrollers (e.g., Arduino/Raspberry Pi) and current sensors to monitor real-time energy consumption. Focuses on system integration, sensor interfacing, and data logging/visualization.</p>
+                    <a href="#" target="_blank">View Details</a>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p>I am actively seeking opportunities in VLSI and semiconductor technology. Feel free to connect or send a message!</p>
+            
+            <div class="contact-details">
+                <p>📧 **Email:** <a href="mailto:shaziafahmeeda17@gmail.com">shaziafahmeeda17@gmail.com</a> [cite: 2]</p>
+                <p>🔗 **LinkedIn:** <a href="www.linkedin.com/in/shazia-fahmeeda-a93610341" target="_blank">Shazia Fahmeeda (LinkedIn)</a> [cite: 3, 4]</p>
+                <p>📍 **Location:** Erode, Tamil Nadu, India [cite: 7]</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Shazia Fahmeeda. Built with HTML5 & CSS3 for Responsiveness.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
